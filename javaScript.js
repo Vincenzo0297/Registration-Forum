@@ -42,8 +42,9 @@ function validationRegistered(event) {
         // User typed: "   hello world   "
         // Without trim: "   hello world   "  (with extra spaces)
         // With trim:    "hello world"        (clean)
-        const msg = message.value.trim();
         const msgRegex = /^[A-Za-z0-9\s.,!?'"():;-]+$/;
+        const msg = message.value.trim();
+      
         if (!msgRegex.test(msg)) {
             errorMessage.textContent = "Invalid message";
             isValid = false;
@@ -77,15 +78,24 @@ function Login(event) {
     const successLogin = document.getElementById('successMessage');
     let isValid = true;
     try{
-        if(loginEmail.value.trim() === "") {
-            errorLoginEmail.textContent = "Invalid Email";
+
+        const authEmail = /\S+@\S+\.\S+/;
+        const emailRegex = loginEmail.value.trim();
+
+        if(emailRegex === "") {
+            errorLoginEmail.textContent = "Email is required";
+            isValid = false;
+        } else if(!authEmail.test(emailRegex)) {
+            errorLoginEmail.textContent = "Please enter a valid email address";
             isValid = false;
         } else {
             errorLoginEmail.textContent = "";
         }
-
-        if(loginPassword.value.trim() === "") {
-            errorLoginPassword.textContent = "Invalid Password";
+        
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const authPassword = loginPassword.value.trim();
+        if(!passwordRegex.test(authPassword)) {
+            errorLoginPassword.textContent = "Password must be at least 8 characters and contain uppercase, lowercase, number, and special character.";
             isValid = false;
         } else {
             errorLoginPassword.textContent = "";

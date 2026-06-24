@@ -103,7 +103,9 @@ body {
 
 #errorName,
 #errorPassword,
-#errorMessage {
+#errorMessage,
+#errorLoginEmail,
+#errorLoginPassword {
     color: #d9534f;          /* red */
     font-size: 0.85em;
     display: block;          /* forces it on its own line */
