@@ -1,4 +1,4 @@
-# 📋 Contact Form with JavaScript Validation
+# 📋 Registration Form
 
 A simple contact form built with HTML, CSS, and JavaScript that include form validation and display successful message.
 
