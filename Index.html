@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <meta charset="UTF-8">
+    <title>Forum</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+
+    <body>
+        <script src="javaScript.js" defer></script>
+        <div class="form-container">
+            <h2>Registration</h2>
+            <p class="subtitle">Please fill out this form.</p>
+            
+            <form onsubmit="return validation(event)">
+                <!-- Name Field -->
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe">
+                    <span id="errorName"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <!-- Password Field -->
+                <div class="input-group">
+                    <label for="name">Password</label>
+                    <input type="password" id="password" name="password" placeholder="password123!">
+                    <span id="errorPassword"></span>
+                </div>
+
+                <!-- Subject Dropdown -->
+                <div class="input-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" name="subject">
+                    <option value="general">General Inquiry</option>
+                    <option value="support">Technical Support</option>
+                    <option value="feedback">Feedback</option>
+                    </select>
+                </div>
+
+                <!-- Message Field -->
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
+                    <span id="errorMessage"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Register</button>
+                <!-- ✅ Add this one line at the end -->
+                <p id="successMessage"></p>
+            </form>
+        </div>
+    </body>
+</html>
