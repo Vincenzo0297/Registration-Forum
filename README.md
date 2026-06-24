@@ -2,7 +2,6 @@
 
 A simple contact form built with HTML, CSS, and JavaScript that include form validation and display successful message.
 
----
 
 ## ✨ Features
 
@@ -14,5 +13,4 @@ A simple contact form built with HTML, CSS, and JavaScript that include form val
 - ✅ **Auto form reset** — Clears all fields after successful submission
 - ✅ **No page reload** — Uses `event.preventDefault()` for smooth UX
 
----
 
