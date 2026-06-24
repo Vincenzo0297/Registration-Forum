@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en">
     <meta charset="UTF-8">
-    <title>Forum</title>
+    <title>Register Forum</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./style.css">
 
@@ -11,7 +11,7 @@
             <h2>Registration</h2>
             <p class="subtitle">Please fill out this form.</p>
             
-            <form onsubmit="return validation(event)">
+            <form onsubmit="return validationRegistered(event)">
                 <!-- Name Field -->
                 <div class="input-group">
                     <label for="name">Full Name</label>
@@ -53,6 +53,8 @@
                 <button type="submit" class="submit-btn">Register</button>
                 <!-- ✅ Add this one line at the end -->
                 <p id="successMessage"></p>
+
+                <p>Click <a href="./Login.html">Login</a> if you have already Registered </p>
             </form>
         </div>
     </body>

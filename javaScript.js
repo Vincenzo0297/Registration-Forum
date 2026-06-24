@@ -1,4 +1,4 @@
-function validation(event) {
+function validationRegistered(event) {
 
     event.preventDefault(); // THIS stops the page from reloading
     const name = document.getElementById('name');
@@ -61,5 +61,42 @@ function validation(event) {
         }     
     } catch(error) {
         console.log("Error submitting the forum", error);
+    }
+}
+
+function Login(event) {
+
+    event.preventDefault();
+
+    const loginEmail = document.getElementById("email");
+    const errorLoginEmail = document.getElementById("errorLoginEmail");
+
+    const loginPassword = document.getElementById("password");
+    const errorLoginPassword = document.getElementById("errorLoginPassword");
+    
+    const successLogin = document.getElementById('successMessage');
+    let isValid = true;
+    try{
+        if(loginEmail.value.trim() === "") {
+            errorLoginEmail.textContent = "Invalid Email";
+            isValid = false;
+        } else {
+            errorLoginEmail.textContent = "";
+        }
+
+        if(loginPassword.value.trim() === "") {
+            errorLoginPassword.textContent = "Invalid Password";
+            isValid = false;
+        } else {
+            errorLoginPassword.textContent = "";
+        }
+
+        if(isValid) {
+            successLogin.textContent = "✅ Form successfully Login!"
+        } else {
+            successLogin.textContent = "";
+        }
+    } catch(error) {
+        console.log("Error Login", error);
     }
 }
